@@ -13,6 +13,9 @@ public class Balls : MonoBehaviour
     [SerializeField]
     private Rigidbody rigidbody;
 
+    [SerializeField]
+    private GameObject Explotion;
+
     private string enemyTag;
 
     private bool didHit;
@@ -24,6 +27,7 @@ public class Balls : MonoBehaviour
 
     public void Fly(Vector3 force)
     {
+        rigidbody.isKinematic = false;
         rigidbody.AddForce(force, ForceMode.Impulse);
         rigidbody.AddTorque(transform.right * torque);
         transform.SetParent(null);
@@ -36,12 +40,14 @@ public class Balls : MonoBehaviour
 
         if (collider.CompareTag(enemyTag))
         {
-            //var health = collider.GetComponent<HealthController>();
-            //health.ApplyDamage(damage);
+            Explotion.SetActive(true);
         }
 
         rigidbody.velocity = Vector3.zero;
         rigidbody.angularVelocity = Vector3.zero;
+        rigidbody.isKinematic = true;
         transform.SetParent(collider.transform);
+
+        Explotion.SetActive(false);
     }
 }

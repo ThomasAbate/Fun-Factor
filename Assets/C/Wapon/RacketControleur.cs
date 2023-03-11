@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Force : MonoBehaviour
+public class RacketControleur : MonoBehaviour
 {
 
     [SerializeField]
     private Racket weapon;
+
+    [SerializeField]
+    private Animator Anim;
 
     [SerializeField]
     private string enemyTag;
@@ -51,6 +53,7 @@ public class Force : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             fire = true;
+            Anim.SetBool("Press button", true);
         }
 
         if (fire && firePower < maxFirePower)
@@ -63,7 +66,7 @@ public class Force : MonoBehaviour
             weapon.Fire(firePower);
             firePower = 0;
             fire = false;
+            Anim.SetBool("Press button", false);
         }
-
     }
 }

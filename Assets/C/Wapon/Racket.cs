@@ -8,7 +8,7 @@ public class Racket : MonoBehaviour
     private float reloadTime;
 
     [SerializeField]
-    private Balls BallsPrefab;
+    private Balls arrowPrefab;
 
     [SerializeField]
     private Transform spawnPoint;
@@ -34,7 +34,7 @@ public class Racket : MonoBehaviour
     private IEnumerator ReloadAfterTime()
     {
         yield return new WaitForSeconds(reloadTime);
-        currentArrow = Instantiate(BallsPrefab, spawnPoint);
+        currentArrow = Instantiate(arrowPrefab, spawnPoint);
         currentArrow.transform.localPosition = Vector3.zero;
         currentArrow.SetEnemyTag(enemyTag);
         isReloading = false;
