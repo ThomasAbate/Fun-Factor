@@ -13,9 +13,6 @@ public class Balls : MonoBehaviour
     [SerializeField]
     private Rigidbody rigidbody;
 
-    [SerializeField]
-    private GameObject Explotion;
-
     private string enemyTag;
 
     private bool didHit;
@@ -40,7 +37,6 @@ public class Balls : MonoBehaviour
 
         if (collider.CompareTag(enemyTag))
         {
-            Explotion.SetActive(true);
         }
 
         rigidbody.velocity = Vector3.zero;
@@ -48,6 +44,5 @@ public class Balls : MonoBehaviour
         rigidbody.isKinematic = true;
         transform.SetParent(collider.transform);
 
-        Explotion.SetActive(false);
     }
 }
