@@ -13,6 +13,13 @@ public class Balls : MonoBehaviour
     [SerializeField]
     private Rigidbody rigidbody;
 
+    [SerializeField]
+    private GameObject BoummVFX;
+
+    [SerializeField]
+    private Boum BoummManager;
+
+
     private string enemyTag;
 
     private bool didHit;
@@ -30,19 +37,29 @@ public class Balls : MonoBehaviour
         transform.SetParent(null);
     }
 
+    private void Start()
+    {
+        BoummManager = gameObject.GetComponent<Boum>();
+    }
+
     void OnTriggerEnter(Collider collider)
     {
-        if (didHit) return;
-        didHit = true;
 
         if (collider.CompareTag(enemyTag))
         {
+            Debug.Log("jai mal");
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!didHit)
+        {
+            BoummManager._Boum(0);
+            BoummVFX.SetActive(true);
+            didHit = true;
         }
 
-        rigidbody.velocity = Vector3.zero;
-        rigidbody.angularVelocity = Vector3.zero;
-        rigidbody.isKinematic = true;
-        transform.SetParent(collider.transform);
-
+        BoummVFX.SetActive(false);
     }
 }

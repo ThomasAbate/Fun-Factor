@@ -31,6 +31,9 @@ public class RacketControleur : MonoBehaviour
     [SerializeField]
     private float maxRotation;
 
+    [SerializeField] 
+    private TrailRenderer trailRenderer;
+
     private float mouseY;
 
     private bool fire;
@@ -68,5 +71,7 @@ public class RacketControleur : MonoBehaviour
             fire = false;
             Anim.SetBool("Press button", false);
         }
+
+        
     }
 }
