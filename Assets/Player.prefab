@@ -101,7 +101,7 @@ Transform:
   - {fileID: 5980284298518070146}
   - {fileID: 5980284297694915327}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5980284298340891666
 MeshFilter:
@@ -313,12 +313,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
   Anim: {fileID: 0}
-  enemyTag: Enemys
   maxFirePower: 20
-  firePowerSpeed: 15
+  firePowerSpeed: 25
   rotateSpeed: 0
   minRotation: -50
   maxRotation: 50
+  trailRenderer: {fileID: 0}
 --- !u!1 &5980284298652310288
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
 
-public class Boum : MonoBehaviour
+public class SoundBoum : MonoBehaviour
 {
     
     [SerializeField] AudioClip[] audioClip;

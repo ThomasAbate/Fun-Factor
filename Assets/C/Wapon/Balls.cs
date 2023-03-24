@@ -16,18 +16,13 @@ public class Balls : MonoBehaviour
     [SerializeField]
     private GameObject BoummVFX;
 
+    [SerializeField] 
+    private GameObject PrefabBoumVFX;
+
     [SerializeField]
-    private Boum BoummManager;
-
-
-    private string enemyTag;
+    private SoundBoum BoummManager;
 
     private bool didHit;
-
-    public void SetEnemyTag(string enemyTag)
-    {
-        this.enemyTag = enemyTag;
-    }
 
     public void Fly(Vector3 force)
     {
@@ -39,27 +34,19 @@ public class Balls : MonoBehaviour
 
     private void Start()
     {
-        BoummManager = gameObject.GetComponent<Boum>();
-    }
-
-    void OnTriggerEnter(Collider collider)
-    {
-
-        if (collider.CompareTag(enemyTag))
-        {
-            Debug.Log("jai mal");
-        }
+        BoummManager = gameObject.GetComponent<SoundBoum>();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (!didHit)
         {
+            PrefabBoumVFX = Instantiate(BoummVFX, transform.position, Quaternion.identity);
+            Destroy(PrefabBoumVFX, 3f);
             BoummManager._Boum(0);
-            BoummVFX.SetActive(true);
             didHit = true;
         }
 
-        BoummVFX.SetActive(false);
+        
     }
 }

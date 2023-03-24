@@ -11,8 +11,6 @@ public class RacketControleur : MonoBehaviour
     [SerializeField]
     private Animator Anim;
 
-    [SerializeField]
-    private string enemyTag;
 
     [SerializeField]
     private float maxFirePower;
@@ -40,9 +38,7 @@ public class RacketControleur : MonoBehaviour
 
     void Start()
     {
-        weapon.SetEnemyTag(enemyTag);
         weapon.Reload();
-
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
