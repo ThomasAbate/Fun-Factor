@@ -18,7 +18,6 @@ public class Racket : MonoBehaviour
 
     private Balls currentBalls;
 
-
     private bool isReloading;
 
 

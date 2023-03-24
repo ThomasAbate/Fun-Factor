@@ -7255,6 +7255,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 585922859195496225, guid: d9fbc07a11dc8cd42bf878b2d8354f21, type: 3}
+      propertyPath: Trail
+      value: 
+      objectReference: {fileID: 1825286332}
+    - target: {fileID: 585922859195496225, guid: d9fbc07a11dc8cd42bf878b2d8354f21, type: 3}
       propertyPath: arrowPrefab
       value: 
       objectReference: {fileID: 1825286330}
@@ -9553,6 +9557,10 @@ PrefabInstance:
     - target: {fileID: 7670337524755926187, guid: fec83012875a0824da5251280ae9ac9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113253313447342802, guid: fec83012875a0824da5251280ae9ac9e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

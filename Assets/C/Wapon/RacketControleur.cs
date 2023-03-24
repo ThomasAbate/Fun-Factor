@@ -29,9 +29,6 @@ public class RacketControleur : MonoBehaviour
     [SerializeField]
     private float maxRotation;
 
-    [SerializeField] 
-    private TrailRenderer trailRenderer;
-
     private float mouseY;
 
     private bool fire;
@@ -45,7 +42,6 @@ public class RacketControleur : MonoBehaviour
 
     void Update()
     {
-        mouseY -= Input.GetAxis("Mouse Y") * rotateSpeed;
         mouseY = Mathf.Clamp(mouseY, minRotation, maxRotation);
         weapon.transform.localRotation = Quaternion.Euler(mouseY, weapon.transform.localEulerAngles.y, weapon.transform.localEulerAngles.z);
 
