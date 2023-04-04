@@ -8,7 +8,7 @@ public class Racket : MonoBehaviour
     private float reloadTime;
 
     [SerializeField]
-    private Balls arrowPrefab;
+    private Balls BallPrefab;
 
     [SerializeField]
     private Transform spawnPoint;
@@ -31,9 +31,10 @@ public class Racket : MonoBehaviour
     private IEnumerator ReloadAfterTime()
     {
         yield return new WaitForSeconds(reloadTime);
-        currentBalls = Instantiate(arrowPrefab, spawnPoint);
+        currentBalls = Instantiate(BallPrefab, spawnPoint);
         currentBalls.transform.localPosition = Vector3.zero;
         isReloading = false;
+
     }
 
     public void Fire(float firePower)
@@ -42,11 +43,17 @@ public class Racket : MonoBehaviour
         var force = spawnPoint.TransformDirection(Vector3.forward * firePower);
         currentBalls.Fly(force);
         currentBalls = null;
+        DestroyCureentBalls();
         Reload();
     }
 
     public bool IsReady()
     {
         return (!isReloading && currentBalls != null);
+    }
+
+    private void DestroyCureentBalls()
+    {
+            Destroy(currentBalls, 3f);
     }
 }

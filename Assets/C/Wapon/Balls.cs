@@ -7,6 +7,7 @@ public class Balls : MonoBehaviour
     [SerializeField]
     private float damage;
 
+
     [SerializeField]
     private float torque;
 
@@ -17,7 +18,7 @@ public class Balls : MonoBehaviour
     private GameObject BoummVFX;
 
     [SerializeField] 
-    private GameObject PrefabBoumVFX;
+    private GameObject InstanceBoumVFX;
 
     [SerializeField]
     private SoundBoum BoummManager;
@@ -42,12 +43,15 @@ public class Balls : MonoBehaviour
     {
         if (!didHit)
         {
-            PrefabBoumVFX = Instantiate(BoummVFX, transform.position, Quaternion.identity);
-            Destroy(PrefabBoumVFX, 3f);
-            BoummManager._Boum(0);
-            didHit = true;
+            InstanceBoumVFX = Instantiate(BoummVFX, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
+    }
 
-        
+    private void OnDestroy()
+    {
+        Destroy(InstanceBoumVFX, 3f);
+        BoummManager._Boum(0);
+        didHit = true;
     }
 }
