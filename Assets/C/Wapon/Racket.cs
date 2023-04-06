@@ -54,6 +54,6 @@ public class Racket : MonoBehaviour
 
     private void DestroyCureentBalls()
     {
-            Destroy(currentBalls, 3f);
+        Destroy(currentBalls, 3f);
     }
 }

@@ -213,15 +213,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 7907325170914903840, guid: 59e0cf73906fc894fbbab0d5d44c7af6, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: eb489cc6c0c3faa4e96ed2572cb641dc, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -313,12 +313,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
   Anim: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: eb489cc6c0c3faa4e96ed2572cb641dc, type: 3}
   maxFirePower: 20
   firePowerSpeed: 25
   rotateSpeed: 0
   minRotation: -50
   maxRotation: 50
-  trailRenderer: {fileID: 0}
 --- !u!1 &5980284298652310288
 GameObject:
   m_ObjectHideFlags: 0

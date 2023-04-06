@@ -11,6 +11,10 @@ public class RacketControleur : MonoBehaviour
     [SerializeField]
     private Animator Anim;
 
+    [SerializeField] 
+    private AudioClip audioClip;
+    private AudioSource audioSource;
+
 
     [SerializeField]
     private float maxFirePower;
@@ -33,6 +37,13 @@ public class RacketControleur : MonoBehaviour
 
     private bool fire;
 
+    private bool song;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Start()
     {
         weapon.Reload();
@@ -54,6 +65,11 @@ public class RacketControleur : MonoBehaviour
         if (fire && firePower < maxFirePower)
         {
             firePower += Time.deltaTime * firePowerSpeed;
+        }
+
+        if (fire && firePower >= maxFirePower)
+        {
+            audioSource.PlayOneShot(audioClip);
         }
 
         if (fire && Input.GetMouseButtonUp(0))

@@ -51,7 +51,6 @@ public class Balls : MonoBehaviour
     private void OnDestroy()
     {
         Destroy(InstanceBoumVFX, 3f);
-        BoummManager._Boum(0);
         didHit = true;
     }
 }
