@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7670337524755926187}
   m_Layer: 0
   m_Name: Balls
-  m_TagString: Untagged
+  m_TagString: Explosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 2272843419293806761}
   m_Layer: 6
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Explosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,6 +180,7 @@ MonoBehaviour:
   torque: 5
   rigidbody: {fileID: 4416353171990962874}
   BoummVFX: {fileID: 9163482265070263314, guid: 2cb8eade0ea5ddb499842f008be5eaba, type: 3}
+  InstanceBoumVFX: {fileID: 0}
   BoummManager: {fileID: 8564533331649476353}
 --- !u!114 &8564533331649476353
 MonoBehaviour:
