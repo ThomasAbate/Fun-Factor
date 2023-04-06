@@ -18,6 +18,9 @@ public class Racket : MonoBehaviour
 
     private Balls currentBalls;
 
+    [SerializeField]
+    private BoxCollider BallColliderFlame;
+
     private bool isReloading;
 
 
@@ -25,6 +28,7 @@ public class Racket : MonoBehaviour
     {
         if (isReloading || currentBalls != null) return;
         isReloading = true;
+        BallColliderFlame.enabled= false;
         StartCoroutine(ReloadAfterTime());
     }
 
@@ -39,10 +43,12 @@ public class Racket : MonoBehaviour
 
     public void Fire(float firePower)
     {
+
         if (isReloading || currentBalls == null) return;
         var force = spawnPoint.TransformDirection(Vector3.forward * firePower);
         currentBalls.Fly(force);
         currentBalls = null;
+        BallColliderFlame.enabled = true;
         DestroyCureentBalls();
         Reload();
     }

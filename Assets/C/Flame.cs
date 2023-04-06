@@ -12,6 +12,7 @@ public class Flame : MonoBehaviour
         if (other.CompareTag("Explosion"))
         {
             feux.SetActive(true);
+            StartDestory();
         }
     }
 
@@ -21,5 +22,10 @@ public class Flame : MonoBehaviour
         {
             feux.SetActive(false);
         }
+    }
+
+    private void StartDestory()
+    {
+        Destroy(gameObject, 5f);
     }
 }

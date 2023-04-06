@@ -19,6 +19,7 @@ public class SoundBoum : MonoBehaviour
     {
         AudioClip clip = GetRandomClip(index);
         audioSource.PlayOneShot(clip);
+        Debug.Log("je suis la");
     }
 
 

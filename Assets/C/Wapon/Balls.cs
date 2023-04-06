@@ -21,7 +21,8 @@ public class Balls : MonoBehaviour
     private GameObject InstanceBoumVFX;
 
     [SerializeField]
-    private SoundBoum BoummManager;
+    public AudioClip audioClip;
+    public AudioSource BoummManager;
 
 
     private bool didHit;
@@ -34,15 +35,14 @@ public class Balls : MonoBehaviour
         transform.SetParent(null);
     }
 
-    private void Start()
-    {
-        BoummManager = gameObject.GetComponent<SoundBoum>();
-    }
+   
 
     private void OnCollisionEnter(Collision collision)
     {
+        
         if (!didHit)
         {
+            BoummManager.PlayOneShot(audioClip);
             InstanceBoumVFX = Instantiate(BoummVFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
@@ -50,6 +50,7 @@ public class Balls : MonoBehaviour
 
     private void OnDestroy()
     {
+        BoummManager.PlayOneShot(audioClip);
         Destroy(InstanceBoumVFX, 3f);
         didHit = true;
     }

@@ -44,10 +44,10 @@ GameObject:
   - component: {fileID: 6162282219301940519}
   - component: {fileID: 1870926694653798612}
   - component: {fileID: 8668670948548579319}
-  - component: {fileID: 9070040494466951707}
   - component: {fileID: 4416353171990962874}
   - component: {fileID: 6759827321997478481}
   - component: {fileID: 8564533331649476353}
+  - component: {fileID: 2616320385577285638}
   - component: {fileID: 9113253313447342802}
   - component: {fileID: 2272843419293806761}
   m_Layer: 6
@@ -135,19 +135,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &9070040494466951707
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8702304355884939496}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: -0.0000019073486, y: 0.00000047683716, z: 0}
 --- !u!54 &4416353171990962874
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -181,7 +168,8 @@ MonoBehaviour:
   rigidbody: {fileID: 4416353171990962874}
   BoummVFX: {fileID: 9163482265070263314, guid: 2cb8eade0ea5ddb499842f008be5eaba, type: 3}
   InstanceBoumVFX: {fileID: 0}
-  BoummManager: {fileID: 8564533331649476353}
+  audioClip: {fileID: 0}
+  BoummManager: {fileID: 0}
 --- !u!114 &8564533331649476353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +184,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClip:
   - {fileID: 8300000, guid: edfff191258d8b2489924cf90fd5ff2f, type: 3}
+--- !u!114 &2616320385577285638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8702304355884939496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63edb6e8abb8a0b419e2626ef53b07b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoummVFX: {fileID: 0}
 --- !u!96 &9113253313447342802
 TrailRenderer:
   serializedVersion: 3

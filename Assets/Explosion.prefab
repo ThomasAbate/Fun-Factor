@@ -9754,7 +9754,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9163482265070263313}
-  - component: {fileID: 4054132057462407841}
   - component: {fileID: 9163482265070263312}
   - component: {fileID: 9163482265070263315}
   - component: {fileID: 7493481238864187658}
@@ -9782,19 +9781,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &4054132057462407841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9163482265070263314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63edb6e8abb8a0b419e2626ef53b07b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BoummVFX: {fileID: 9163482265070263314}
 --- !u!198 &9163482265070263312
 ParticleSystem:
   m_ObjectHideFlags: 0
