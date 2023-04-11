@@ -32,6 +32,9 @@ public class RacketControleur : MonoBehaviour
     [SerializeField]
     private float maxRotation;
 
+    [SerializeField]
+    private TrailRenderer TrailRenderer;
+
     private float mouseY;
 
     private bool fire;
@@ -71,6 +74,7 @@ public class RacketControleur : MonoBehaviour
         {
             isplayed = true;
             audioSource.PlayOneShot(audioClip);
+            TrailRenderer.startColor = Color.red ;
         }
 
         if (fire && Input.GetMouseButtonUp(0))
@@ -81,7 +85,9 @@ public class RacketControleur : MonoBehaviour
             isplayed = false;
             Anim.SetBool("Press button", false);
         }
-        
+
+        TrailRenderer.startColor = Color.gray;
+
     }
 
 }

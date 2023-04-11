@@ -5,10 +5,6 @@ using UnityEngine;
 public class Balls : MonoBehaviour
 {
     [SerializeField]
-    private float damage;
-
-
-    [SerializeField]
     private float torque;
 
     [SerializeField]
@@ -44,14 +40,18 @@ public class Balls : MonoBehaviour
         {
             BoummManager.PlayOneShot(audioClip);
             InstanceBoumVFX = Instantiate(BoummVFX, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            didHit = true;
+            StartCoroutine(DestoryBall());
+            
+            
         }
     }
 
-    private void OnDestroy()
+    public IEnumerator DestoryBall()
     {
-        BoummManager.PlayOneShot(audioClip);
-        Destroy(InstanceBoumVFX, 3f);
-        didHit = true;
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
+        Destroy(InstanceBoumVFX);
     }
+
 }

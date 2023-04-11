@@ -1807,6 +1807,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2132359258}
     - target: {fileID: 9075143004512303019, guid: d5f96109f99d02a46b350daf49a727bc, type: 3}
+      propertyPath: TrailRenderer
+      value: 
+      objectReference: {fileID: 1825286332}
+    - target: {fileID: 9075143004512303019, guid: d5f96109f99d02a46b350daf49a727bc, type: 3}
       propertyPath: trailRenderer
       value: 
       objectReference: {fileID: 1825286332}
@@ -1972,8 +1976,7 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8564533331649476353, guid: fec83012875a0824da5251280ae9ac9e, type: 3}
+    m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: fec83012875a0824da5251280ae9ac9e, type: 3}
 --- !u!1 &1985449246 stripped

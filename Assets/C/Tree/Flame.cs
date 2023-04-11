@@ -16,14 +16,6 @@ public class Flame : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Explosion"))
-        {
-            feux.SetActive(false);
-        }
-    }
-
     private void StartDestory()
     {
         Destroy(gameObject, 5f);
