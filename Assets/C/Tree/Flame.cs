@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Flame : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Flame : MonoBehaviour
     {
         if (other.CompareTag("Explosion"))
         {
+            ScoreScript.scoreValue += 1;
             feux.SetActive(true);
             StartDestory();
         }

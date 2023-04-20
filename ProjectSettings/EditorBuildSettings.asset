@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: fee77c0b730472b4aae60bd75074b2ce
+  - enabled: 1
     path: Assets/Scenes/Terin de tennis.unity
     guid: a3527ce6765181347800746b78c880d0
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: fa173449ca5eb84458ae5ede0c4f41e3
   m_configObjects: {}
