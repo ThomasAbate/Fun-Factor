@@ -29,40 +29,40 @@ public class ScoreScript : MonoBehaviour
     {
         score.text = scoreValue.ToString();
 
-        if (scoreValue == 1)
+        if (scoreValue >= 1)
         {
             Sound1kill.SetActive(true);
         }
         
-        if (scoreValue == 10)
+        if (scoreValue >= 10)
         {
             Sound10kill.SetActive(true);
         }
 
-        if (scoreValue == 20)
+        if (scoreValue >= 20)
         {
             xUI.SetActive(true);
             Sound20kill.SetActive(true);
         }
 
-        if (scoreValue == 40)
+        if (scoreValue >= 40)
         {
             Sound40kill.SetActive(true);
         }
 
-        if (scoreValue == 60)
+        if (scoreValue >= 60)
         {
             x2.SetActive(false);
             Sound60kill.SetActive(true);
             x4.SetActive(true);
         }
 
-        if (scoreValue == 100)
+        if (scoreValue >= 100)
         {
             Sound100kill.SetActive(true);
         }
 
-        if (scoreValue == 140) 
+        if (scoreValue >= 140) 
         {
             Invoke("ToEnd", 2f);
         }
