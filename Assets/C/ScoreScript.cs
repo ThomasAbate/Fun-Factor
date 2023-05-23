@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
+    public static ScoreScript instance;
+    
     public static int scoreValue = 0;
     public Text score;
     public GameObject Sound1kill;
@@ -19,9 +21,11 @@ public class ScoreScript : MonoBehaviour
     public GameObject x2;
     public GameObject x4;
 
+    
     void Start()
     {
         score = GetComponent<Text>();
+        instance = this;
     }
 
  
