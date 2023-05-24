@@ -8,7 +8,7 @@ public class SaveToFile : MonoBehaviour
     
     protected void SaveToFile()
     {
-        string json = JsonUtility.ToJson(saveData);
+        string json = JsonUtility.ToJson(Save);
         if (!File.Exists(Application.persistentDataPath + "/data.save"))
         {
             File.Create(Application.persistentDataPath + "/data.save").Dispose();
