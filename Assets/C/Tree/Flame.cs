@@ -12,7 +12,8 @@ public class Flame : MonoBehaviour
     {
         if (other.CompareTag("Explosion"))
         {
-            ScoreScript.scoreValue += 1;
+            ScoreScript.instance.scoreValue += 1;
+            Save.instance.Savee(ScoreScript.instance.scoreValue);
             feux.SetActive(true);
             StartDestory();
         }

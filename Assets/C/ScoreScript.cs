@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,7 +9,7 @@ public class ScoreScript : MonoBehaviour
 {
     public static ScoreScript instance;
     
-    public static int scoreValue = 0;
+    public int scoreValue = 0;
     public Text score;
     public GameObject Sound1kill;
     public GameObject Sound10kill;
@@ -24,8 +25,16 @@ public class ScoreScript : MonoBehaviour
     
     void Start()
     {
+        if (File.Exists(Application.persistentDataPath + "/SaveOption.data"))
+        {
+            Save.instance.Load();
+            scoreValue = Save.instance.score;
+        }
+
         score = GetComponent<Text>();
-        instance = this;
+
+        if (instance) Destroy(this);
+        else instance = this;
     }
 
  
